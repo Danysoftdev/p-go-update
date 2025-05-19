@@ -1,0 +1,25 @@
+services:
+  update-service:
+    image: danysoftdev/p-go-update:latest
+    container_name: microservicio-update
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "8084:8080"
+    networks:
+      - parcial_go_mongo_net
+
+  tester:
+    image: curlimages/curl
+    depends_on:
+      - update-service
+    networks:
+      - parcial_go_mongo_net
+    entrypoint: [ "sh", "-c", "sleep 15 && curl -s --fail http://update-service:8080 || exit 1" ]
+    profiles:
+      - test
+
+networks:
+  parcial_go_mongo_net:
+    external: true
