@@ -17,3 +17,6 @@ vendor/
 
 # Env file
 .env
+
+# Secret files
+k8s/update/secrets-update.yaml
