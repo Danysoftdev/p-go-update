@@ -9,6 +9,7 @@ kubectl apply -f k8s/update/namespace-update.yaml
 
 # Secret
 kubectl apply -f k8s/update/secrets-update.yaml
+kubectl apply -f k8s/update/dockerhub-secret.yaml
 
 # Deployment
 kubectl apply -f k8s/update/deployment-update.yaml

@@ -8,6 +8,8 @@ metadata:
 spec:
   nodeSelector:
     workload: update
+  imagePullSecrets:
+    - name: dockerhub-secret
   containers:
     - name: update-container
       image: danysoftdev/p-go-update:latest

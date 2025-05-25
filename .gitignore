@@ -20,3 +20,4 @@ vendor/
 
 # Secret files
 k8s/update/secrets-update.yaml
+k8s/update/dockerhub-secret.yaml
